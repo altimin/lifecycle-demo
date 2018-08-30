@@ -1,0 +1,44 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  color: #373fff;
+}
+
+.progress {
+  height: 20px;
+  border: 1px solid;
+}
+
+.fast {
+  width: 7px;
+  height:20px;
+  background: green;
+  float: left;
+}
+
+.slow {
+  width: 7px;
+  height:20px;
+  background: yellow;
+  float: left;
+}
+
+.stopped {
+  width: 7px;
+  height:20px;
+  background: red;
+  float: left;
+}
+
+.event {
+  width: 2px;
+  height: 40px;
+  background: black;
+  float: left;
+  font-size: 15px;
+}
