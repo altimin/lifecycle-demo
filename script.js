@@ -55,6 +55,20 @@ if (urlParams.has("load")) {
   load();
 }
 
+if (urlParams.has("beforeunload")) {
+  window.addEventListener("beforeunload", () => {
+    appendEvent("beforeunload");
+    return false;
+  });
+}
+
+if (urlParams.has("unload")) {
+  window.addEventListener("unload", () => {
+    appendEvent("unload");
+    return false;
+  });
+}
+
 document.onmessage = function(event) {
   appendToProgressBar(event.data, Date.now());
 }
