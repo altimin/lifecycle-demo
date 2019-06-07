@@ -58,14 +58,26 @@ if (urlParams.has("load")) {
 if (urlParams.has("beforeunload")) {
   window.addEventListener("beforeunload", () => {
     appendEvent("beforeunload");
-    return false;
+    return urlParams.has("beforeunload_disallow");
   });
 }
 
 if (urlParams.has("unload")) {
   window.addEventListener("unload", () => {
     appendEvent("unload");
+  });
+}
+
+if (urlParams.has("pagehide")) {
+  window.addEventListener("pagehide", () => {
+    appendEvent("pagehide");
     return false;
+  });
+}
+
+if (urlParams.has("pageshow")) {
+  window.addEventListener("pageshow", () => {
+    appendEvent("pageshow");
   });
 }
 
