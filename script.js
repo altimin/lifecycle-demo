@@ -40,12 +40,20 @@ function load() {
     });
 }
 
-// This worker sleeps and sends postMessages in a loop.
-post_message_worker = new Worker("worker_post_message.js");
+var urlParams = new URLSearchParams(window.location.search);
 
-setInterval(periodicTimer, 200);
+if (urlParams.has("worker")) {
+  // This worker sleeps and sends postMessages in a loop.
+  post_message_worker = new Worker("worker_post_message.js");
+}
 
-load();
+if (urlParams.has("timer")) {
+  setInterval(periodicTimer, 200);
+}
+
+if (urlParams.has("load")) {
+  load();
+}
 
 document.onmessage = function(event) {
   appendToProgressBar(event.data, Date.now());
