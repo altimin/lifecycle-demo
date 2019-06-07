@@ -58,27 +58,29 @@ if (urlParams.has("load")) {
 }
 
 if (urlParams.has("beforeunload")) {
-  window.addEventListener("beforeunload", () => {
+  window.addEventListener("beforeunload", (event) => {
     appendEvent("beforeunload");
-    return urlParams.has("beforeunload_disallow");
+    if (urlParams.has("beforeunload_disallow")) {
+      event.returnValue = "Do not leave, please";
+    }
   });
 }
 
 if (urlParams.has("unload")) {
-  window.addEventListener("unload", () => {
+  window.addEventListener("unload", (event) => {
     appendEvent("unload");
   });
 }
 
 if (urlParams.has("pagehide")) {
-  window.addEventListener("pagehide", () => {
+  window.addEventListener("pagehide", (event) => {
     appendEvent("pagehide");
     return false;
   });
 }
 
 if (urlParams.has("pageshow")) {
-  window.addEventListener("pageshow", () => {
+  window.addEventListener("pageshow", (event) => {
     appendEvent("pageshow");
   });
 }
