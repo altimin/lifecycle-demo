@@ -10,7 +10,9 @@ function appendToProgressBar(bar, time) {
 
 function appendEvent(name) {
   var logs = document.getElementById("eventLogs");
-  logs.innerHTML += "Page was " + name + " at " + new Date() + "<br/>";
+  var message = "Page was " + name + " at " + new Date() + "<br/>";
+  logs.innerHTML += message;
+  console.log(message);
 }
 
 var lastInterval = Date.now();
