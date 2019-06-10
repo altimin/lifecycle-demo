@@ -1,0 +1,12 @@
+<div id="eventLogs"/>
+
+<script>
+
+navigator.geolocation.watchPosition(position => {
+  var message = "Location at " + new Date + " is " + position.coors.latitude + ", " + position.coords.longitude;
+  console.log(message);
+  var logs = document.getElementById("logs");
+  logs.innerHTML += message + "<br/>;
+});
+
+</script>
