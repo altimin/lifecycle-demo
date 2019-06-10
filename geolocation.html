@@ -1,5 +1,7 @@
 <title>Geolocation test</title>
 
+<h1>Geolocation test</h1>
+
 <div id="eventLogs"/>
 
 <script>
@@ -8,7 +10,7 @@ navigator.geolocation.watchPosition(position => {
   var message = "Location at " + new Date + " is " + position.coors.latitude + ", " + position.coords.longitude;
   console.log(message);
   var logs = document.getElementById("logs");
-  logs.innerHTML += message + "<br/>;
+  logs.innerHTML += message + "<br/>";
 });
 
 </script>
