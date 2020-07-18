@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Lifecycle Demo</title>
+    <title>BackForwardCache Tester</title>
     
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- import the webpage's javascript file -->
-    <script src="script.js" defer></script>
   </head>
   <body>
     
-    <h1>Lifecycle Progress Tracker</h1>
-    
+    <h1>BackForwardCache Tester</h1>
+
     <div>
+      <h2>Feature status:</h3>
+      <ul id="feature_list">
+      </ul>
+    </div>
+
+    
+    <h2>Continuous events:</h3>
+
+    <div id="loadingBarBox">
       Loading: <div id="loadingBar" class="progress"></div>
     </div>
     
-    <div>
+    <div id="timerBarBox">
       Timer: <div id="timerBar" class="progress"></div>
     </div>
 
@@ -33,16 +39,19 @@
       Timer in worker: <div id="timerWorkerBar" class="progress"></div>
     </div>
   
-    Some links:
-    <br/>
+    <h2>Some links:</h2>
     <a href="http://example.com">http://example.com</a>
     <br/>
     <a href="https://lifecycle-demo.glitch.me">lifecycle-demo.glitch.me</a>
     <br/>
     <a href="./index_2.html">./index_2.html</a>
     <br/>
-    Events:
+    <h2>Events:</h2>
     <br/>
     <div id="eventLogs"/>
+    
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+
   </body>
 </html>
