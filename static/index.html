@@ -4,26 +4,33 @@
     <title>BackForwardCache Tester</title>
     
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
     
     <h1>BackForwardCache Tester</h1>
 
     <div>
-      <h2>Feature status:</h3>
-      <ul id="feature_list">
+      <h2>Features set manually:</h3>
+      <ul id="manually_set_feature_list">
+      </ul>
+      <h2>Additional features:</h3>
+      <ul id="default_feature_list">
       </ul>
     </div>
 
     
     <h2>Continuous events:</h3>
 
-    <div id="loadingBarBox">
-      Loading: <div id="loadingBar" class="progress"></div>
+    <div id="loadingFetchBarBox" style="display: none">
+      Loading (fetch): <div id="loadingFetchBar" class="progress"></div>
+    </div>
+
+    <div id="loadingXHRBarBox" style="display: none">
+      Loading (XHR): <div id="loadingXHRBar" class="progress"></div>
     </div>
     
-    <div id="timerBarBox">
+    <div id="timerBarBox" style="display: none">
       Timer: <div id="timerBar" class="progress"></div>
     </div>
 
@@ -44,14 +51,18 @@
     <br/>
     <a href="https://lifecycle-demo.glitch.me">lifecycle-demo.glitch.me</a>
     <br/>
-    <a href="./index_2.html">./index_2.html</a>
+    <a href="./blank.html">./blank.html</a>
     <br/>
-    <h2>Events:</h2>
+    <h2 id="eventsHeader">Events:</h2>
+    <button id="refreshLogsButton" style="display: none" onclick="refreshPersistentLogs()">Refresh</button>
+    <button onclick="clearLogs()">Clear</button>
+    <div id="eventLogs"></div>
     <br/>
-    <div id="eventLogs"/>
+    <h2>Subresources:</h2>
+    <div id="subresources"></div>
     
     <!-- import the webpage's javascript file -->
-    <script src="script.js" defer></script>
+    <script src="/static/script.js" defer></script>
 
   </body>
 </html>
